@@ -14,7 +14,7 @@ The **Smart Traffic Management System** is a comprehensive application designed 
 
 ### ✨ Features
 - **Real-time Vehicle Data Processing**: Integration with **Kafka** to handle streaming data from vehicle sensors.
-- **Driving Behavior Prediction**: Machine learning models (RNN/GRU) to predict behaviors such as aggressive driving.
+- **Driving Behavior Prediction**: Machine learning models (LSTM) to predict behaviors such as aggressive driving.
 - **Overload Detection**: Monitors sensor data to detect if vehicles are overloaded.
 - **Redis Caching**: Low-latency data access using **Redis** for efficient performance.
 - **Scalable Architecture**: Built using **Spring Boot**, making it easy to manage, scale, and deploy.
@@ -25,7 +25,7 @@ The **Smart Traffic Management System** is a comprehensive application designed 
 - **Message Broker**: [Apache Kafka](https://kafka.apache.org/)
 - **Data Caching**: [Redis](https://redis.io/)
 - **Build Tool**: [Maven](https://maven.apache.org/)
-- **Model Type**: RNN/GRU for time-series analysis
+- **Model Type**: LSTM for time-series analysis
 - **Deployment**: Docker, Flask (for the Python ML service)
 
 ### Architecture
