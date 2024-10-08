@@ -45,27 +45,20 @@ The **Smart Traffic Management System** is a comprehensive application designed 
 
 ### Steps to Setup
 
-1. **Set up the Java backend**:
-   ```bash
-   mvn clean install
-   mvn spring-boot:run
+# Steps to Setup
 
+# 1. Set up the Java backend:
+mvn clean install
+mvn spring-boot:run
 
-## 🚀 Getting Started
-### Prerequisites
-- Java 17
-- Python 3.8+
-- Maven
-- Redis
-- Kafka
-- Docker
+# 2. Set up the Python Machine Learning service:
+cd smart-traffic-ml
+pip install -r requirements.txt
+python app.py
 
-### Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/LookJohnny/smart-traffic-project.git
-   cd smart-traffic-project
-
+# 3. Start Redis and Kafka using Docker:
+docker run -p 6379:6379 redis
+docker-compose up
 
 
 📫 Contact
