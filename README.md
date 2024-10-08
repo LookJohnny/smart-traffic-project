@@ -1,13 +1,47 @@
-Smart Traffic Management System
-Overview
-The Smart Traffic Management System is a microservice-based application designed to predict dangerous driving behaviors and detect vehicle overloads. This project leverages Spring Boot, Redis, Kafka, and PyTorch for building a real-time traffic management system. It includes an ML model trained using RNN (Recurrent Neural Networks) and GRU (Gated Recurrent Unit) to predict dangerous driving patterns based on sensor data.
+<h1 align="center">🚦 Smart Traffic Management System 🚦</h1>
+<h3 align="center">A scalable microservice-based application for predicting dangerous driving behaviors and detecting vehicle overloads in real-time</h3>
 
-Features
-Real-time vehicle data processing: Integration with Kafka to handle real-time data streams.
-Dangerous driving prediction: Machine learning models to predict dangerous driving behaviors (e.g., aggressive driving).
-Overload detection: Using sensor data to detect if a vehicle is overloaded.
-Redis caching: Efficient data caching using Redis for low-latency data access.
-Scalable microservice architecture: Built using Spring Boot, making it easy to scale and manage.
+<p align="center">
+  <img src="https://img.shields.io/badge/Spring%20Boot-2.6.2-brightgreen" alt="Spring Boot">
+  <img src="https://img.shields.io/badge/Kafka-Apache-yellowgreen" alt="Kafka">
+  <img src="https://img.shields.io/badge/PyTorch-1.9.0-red" alt="PyTorch">
+  <img src="https://img.shields.io/badge/Docker-20.10-blue" alt="Docker">
+  <img src="https://img.shields.io/badge/Redis-6.2.5-orange" alt="Redis">
+</p>
+
+## 📖 Overview
+The **Smart Traffic Management System** is a comprehensive application designed to manage and analyze vehicle data streams to detect dangerous driving behaviors and overloads. It utilizes advanced technologies like **Spring Boot**, **Kafka**, **Redis**, and **PyTorch** to provide a real-time solution for traffic management.
+
+### ✨ Features
+- **Real-time Vehicle Data Processing**: Integration with **Kafka** to handle streaming data from vehicle sensors.
+- **Driving Behavior Prediction**: Machine learning models (RNN/GRU) to predict behaviors such as aggressive driving.
+- **Overload Detection**: Monitors sensor data to detect if vehicles are overloaded.
+- **Redis Caching**: Low-latency data access using **Redis** for efficient performance.
+- **Scalable Architecture**: Built using **Spring Boot**, making it easy to manage, scale, and deploy.
+
+## 🏗️ Technology Stack
+- **Backend Framework**: Spring Boot (Java)
+- **Machine Learning**: PyTorch (Python)
+- **Message Broker**: Apache Kafka
+- **Data Caching**: Redis
+- **Build Tool**: Maven
+- **Deployment**: Docker & Flask (for Python ML service)
+
+## 🚀 Getting Started
+### Prerequisites
+- Java 17
+- Python 3.8+
+- Maven
+- Redis
+- Kafka
+- Docker
+
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/LookJohnny/smart-traffic-project.git
+   cd smart-traffic-project
+
 Technology Stack
 Backend Framework: Spring Boot (Java)
 Machine Learning: PyTorch (Python)
@@ -28,59 +62,42 @@ Maven (for building the Java project)
 Redis (for caching)
 Kafka (for message streaming)
 Docker (for containerization, optional)
-Steps to Setup
-1. Clone the repository
-git clone https://github.com/LookJohnny/smart-traffic-project.git
-cd smart-traffic-project
-2. Setting up the Java backend
-Install dependencies and build the project using Maven:
-
+Set up the Java backend:
+bash
+复制代码
 mvn clean install
-Run the Spring Boot microservice:
-
 mvn spring-boot:run
-3. Setting up the Python Machine Learning service
-Navigate to the smart-traffic-ml directory:
-
+Set up the Python Machine Learning service:
+bash
+复制代码
 cd smart-traffic-ml
-Install the required dependencies:
-
 pip install -r requirements.txt
-Run the Flask server for the ML service:
-
 python app.py
-4. Running Kafka and Redis (using Docker)
-Start Redis:
-
+Start Redis and Kafka using Docker:
+bash
+复制代码
 docker run -p 6379:6379 redis
-Start Kafka (via Docker or manually):
-
 docker-compose up
-5. Testing the API
-Once both the Java and Python services are running, you can test the API via:
-
-The Spring Boot backend at http://localhost:8080.
-The Flask ML service at http://localhost:5000/predict.
-Usage
-The system reads real-time sensor data (e.g., accelerometer and gyroscope) from Kafka.
-The Spring Boot backend manages the data flow and communicates with the PyTorch model via the Flask API to predict driving behavior.
-Redis is used for caching processed data to improve performance.
+🧪 Usage
+Spring Boot Backend: Access it at http://localhost:8080.
+Flask ML Service: Access it at http://localhost:5000/predict.
 API Endpoints
-POST /predict: Sends time-series sensor data to the Python Flask API for analysis.
-GET /vehicles: Retrieves vehicle data from Redis.
-Machine Learning Model
-Model Architecture: A deep learning model utilizing GRU to process time-series data from sensors such as accelerometers and gyroscopes.
-Training Dataset: The model is trained on labeled driving behavior data (e.g., NORMAL, AGGRESSIVE).
+POST /predict: Submit time-series sensor data for analysis and receive predictions.
+GET /vehicles: Retrieve vehicle data stored in Redis.
+🧠 Machine Learning Model
+Model Architecture: GRU-based model (Gated Recurrent Unit) for processing time-series data from sensors such as accelerometers and gyroscopes.
+Training Dataset: Trained on labeled data representing various driving behaviors (e.g., NORMAL, AGGRESSIVE).
 Input: Sensor data (AccX, AccY, AccZ, GyroX, GyroY, GyroZ) collected over time windows.
 Output: Probability of dangerous driving behavior or vehicle overload.
-Future Improvements
-Model Optimization: Improve the accuracy of the ML model using more advanced techniques such as hyperparameter tuning and feature engineering.
-Real-time Scaling: Implement horizontal scaling for handling higher traffic volumes using Kubernetes.
-Edge Deployment: Explore deploying parts of the system on edge devices for faster real-time predictions.
-Contributing
-If you'd like to contribute to this project, feel free to submit a pull request or report any issues in the GitHub Issues section.
+📈 Future Improvements
+Model Optimization: Enhance accuracy with advanced techniques like hyperparameter tuning and feature engineering.
+Scaling: Implement horizontal scaling using Kubernetes to handle increased traffic.
+Edge Deployment: Deploy parts of the system on edge devices for faster real-time predictions.
+🤝 Contributing
+We welcome contributions! If you have any suggestions or want to collaborate, please submit a pull request or open an issue.
 
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-This README gives a detailed professional overview of the project while guiding users on how to set it up and contribute. Let me know if you'd like any further changes!
+📫 Contact
+Reach me at johnny.liu0888@gmail.com
+Connect with me on LinkedIn
+🛠️ Languages and Tools
+<p align="left"> <a href="https://spring.io/projects/spring-boot" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/spring/spring-original-wordmark.svg" alt="Spring Boot" width="40" height="40"/> </a> <a href="https://kafka.apache.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/apachekafka/apachekafka-original-wordmark.svg" alt="Kafka" width="40" height="40"/> </a> <a href="https://pytorch.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/pytorch/pytorch-original-wordmark.svg" alt="PyTorch" width="40" height="40"/> </a> <a href="https://www.docker.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="Docker" width="40" height="40"/> </a> <a href="https://redis.io/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redis/redis-original-wordmark.svg" alt="Redis" width="40" height="40"/> </a> <a href="https://maven.apache.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/apache/apache-original-wordmark.svg" alt="Maven" width="40" height="40"/> </a> </p>
